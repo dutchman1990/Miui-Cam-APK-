@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:icon="@drawable/ic_selfie" android:enabled="true" android:shortcutId="selfie" android:shortcutShortLabel="@string/button_front_camera_title" android:shortcutLongLabel="@string/button_front_camera_title">
+        <intent android:targetPackage="com.android.camera" android:action="android.intent.extra.START_WITH_FRONT_CAMERA" android:targetClass="com.android.camera.Camera" />
+    </shortcut>
+    <shortcut android:icon="@drawable/ic_selfie" android:enabled="true" android:shortcutId="photos" android:shortcutShortLabel="@string/pref_camera_snap_entry_take_picture" android:shortcutLongLabel="@string/pref_camera_snap_entry_take_picture">
+        <intent android:targetPackage="com.android.camera" android:action="android.media.action.IMAGE_CAPTURE" android:targetClass="com.android.camera.Camera">
+            <extra android:name="android.intent.extra.START_WITH_BACK_CAMERA" android:value="true" />
+        </intent>
+    </shortcut>
+    <shortcut android:icon="@drawable/ic_video" android:enabled="true" android:shortcutId="video" android:shortcutShortLabel="@string/pref_camcorder_settings" android:shortcutLongLabel="@string/pref_camcorder_settings">
+        <intent android:targetPackage="com.android.camera" android:action="android.media.action.VIDEO_CAMERA" android:targetClass="com.android.camera.Camera" />
+    </shortcut>
+</shortcuts>

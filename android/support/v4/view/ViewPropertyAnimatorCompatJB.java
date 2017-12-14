@@ -1,0 +1,30 @@
+package android.support.v4.view;
+
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+
+class ViewPropertyAnimatorCompatJB {
+    ViewPropertyAnimatorCompatJB() {
+    }
+
+    public static void setListener(final View view, final ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
+        if (viewPropertyAnimatorListener != null) {
+            view.animate().setListener(new AnimatorListenerAdapter() {
+                public void onAnimationCancel(Animator animator) {
+                    viewPropertyAnimatorListener.onAnimationCancel(view);
+                }
+
+                public void onAnimationEnd(Animator animator) {
+                    viewPropertyAnimatorListener.onAnimationEnd(view);
+                }
+
+                public void onAnimationStart(Animator animator) {
+                    viewPropertyAnimatorListener.onAnimationStart(view);
+                }
+            });
+        } else {
+            view.animate().setListener(null);
+        }
+    }
+}
